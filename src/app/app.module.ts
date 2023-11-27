@@ -25,6 +25,9 @@ import { FiltersComponent } from './pages/components/filters/filters.component';
 import { ProductBoxComponent } from './pages/components/product-box/product-box.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { CartService } from './services/cart.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RegisterComponent } from './pages/register/register.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -35,7 +38,8 @@ import { CartService } from './services/cart.service';
     ProductsHeaderComponent, 
     FiltersComponent, 
     ProductBoxComponent, 
-    CartComponent
+    CartComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +57,8 @@ import { CartService } from './services/cart.service';
     MatTableModule,
     MatBadgeModule,
     MatSnackBarModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [CartService],
   bootstrap: [AppComponent]
