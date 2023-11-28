@@ -7,18 +7,14 @@ import { Product } from 'src/app/models/product.model';
 })
 export class ProductBoxComponent implements OnInit{
   @Input() fullWidthMode = false;
-  product: Product | undefined ={
-    id: 1,
-    title: 'Hamburguesas',
-    price: 150,
-    category: 'comida rapida',
-    description: 'descripcion',
-    image: 'https://via.placeholder.com/150',
-  };
+  @Input() product!: Product;
   @Output() addToCart = new EventEmitter();
 
 
-  constructor() { }
+  constructor() { 
+    console.log( `hola aqui`);
+    
+  }
   
   ngOnInit(): void {
       
