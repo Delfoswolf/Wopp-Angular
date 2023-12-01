@@ -5,10 +5,10 @@
 [autosize]="true"
 class="min-h-full max-w-8-l mx-auto border-x"
 >
-    <mat-drawer mode="side" opened class="p-6">
+    <mat-drawer mode="side" opened class="p-6 bg-emerald-200">
         <app-filters (showCategory)="onShowCategory($event)"></app-filters>
     </mat-drawer>
-    <mat-drawer-content class="p-6">
+    <mat-drawer-content class="p-6 bg-emerald-300">
         <app-products-header (columnsCountChange)="onColumnsCountChange($event)"></app-products-header>
         <mat-grid-list
             gutterSize="16"

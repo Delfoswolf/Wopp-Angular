@@ -8,7 +8,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class FiltersComponent implements OnInit {
   @Output() showCategory = new EventEmitter<string>()
   
-  categories = ['Hamburguesas', 'Pizzas', 'Tacos', 'Restaurantes', 'Sandwiches'];
+  categories = ['Hamburguesas', 'Pizzas', 'Tacos', 'Restaurantes', 'Sandwiches', 'Frutas', 'Verduras', 'Jugos'];
   
   constructor() {}
 

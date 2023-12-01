@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/models/product.model';
+import { Product } from 'src/app/interfaces/product';
+//import { Product } from 'src/app/models/product.model';
+//import { Productss } from 'src/app/models/product.model';
+// import { ResponseProducts } from 'src/app/interfaces/response-products';
+//import { Product } from 'src/app/models/product.model';
 import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -15,6 +19,7 @@ export class HomeComponent implements OnInit {
   rowHeight = ROWS_HEIGHT[this.cols];
   category: string | undefined;
   products!: Product[];
+  
 
   constructor(
     private cartService: CartService,
@@ -22,12 +27,17 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-      this.productService.getProducts().subscribe( data => {
-        console.log( data );
-        
-        this.products = data.data;
-      });
+      this.productService.getAllProducts().subscribe( data => {
+      console.log( data );
+ 
+      this.products = data.data;
+    });
+    
   }
+
+  
+    
+  
 
   onColumnsCountChange( colsNum: number) {
     this.cols = colsNum;

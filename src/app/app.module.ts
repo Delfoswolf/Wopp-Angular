@@ -28,6 +28,9 @@ import { CartService } from './services/cart.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './pages/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NewProductComponent } from './pages/products/new-product/new-product.component';
+import { UpdateProductComponent } from './pages/products/update-product/update-product.component';
+import { ProductsComponent } from './pages/products/products.component';
 
 
 @NgModule({
@@ -39,7 +42,10 @@ import { HttpClientModule } from '@angular/common/http';
     FiltersComponent, 
     ProductBoxComponent, 
     CartComponent,
-    RegisterComponent
+    RegisterComponent,
+    NewProductComponent,
+    UpdateProductComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,

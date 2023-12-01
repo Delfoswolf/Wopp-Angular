@@ -52,16 +52,16 @@
         <small
           *ngIf="registerForm.get( 'username' )?.errors?.[ 'required' ]"
         >
-          El username es requerido
+          El usuario es requerido
         </small>
         <small *ngIf="registerForm.get( 'username' )?.errors?.[ 'email' ]">
-          El username debe ser un correo electronico
+          El usuario debe ser un correo electronico
         </small>
       </div>
 
   </div>
   <div class="field">
-    <label for="password">Password</label>
+    <label for="password">Contraseña</label>
     <input
       id="password"
       class="input-field"
@@ -171,10 +171,5 @@
     <p>Ingresa <a routerLink="/auth/login">aquí</a></p>
   </div>
 
-  <div class="errors">
-    <h3 class="title-errors">Errors</h3>
-    <pre class="error">name {{ registerForm.get( 'name' )?.errors | json }}</pre>
-    <pre class="error">username {{ registerForm.get( 'username' )?.errors | json }}</pre>
-    <pre class="error">password {{ registerForm.get( 'password' )?.errors | json }}</pre>
-  </div>
+  
 </form>
