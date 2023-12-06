@@ -13,6 +13,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table'; 
 import { MatBadgeModule } from '@angular/material/badge'; 
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -31,6 +35,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NewProductComponent } from './pages/products/new-product/new-product.component';
 import { UpdateProductComponent } from './pages/products/update-product/update-product.component';
 import { ProductsComponent } from './pages/products/products.component';
+import { LoginComponent } from './pages/login/login.component';
+// import { Header2Component } from './components/header2/header2.component';
 
 
 @NgModule({
@@ -45,7 +51,10 @@ import { ProductsComponent } from './pages/products/products.component';
     RegisterComponent,
     NewProductComponent,
     UpdateProductComponent,
-    ProductsComponent
+    ProductsComponent,
+    LoginComponent
+    
+    // Header2Component
   ],
   imports: [
     BrowserModule,
@@ -64,7 +73,12 @@ import { ProductsComponent } from './pages/products/products.component';
     MatBadgeModule,
     MatSnackBarModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatInputModule,
+    MatSelectModule,
+    MatAutocompleteModule,
+
+
   ],
   providers: [CartService],
   bootstrap: [AppComponent]
