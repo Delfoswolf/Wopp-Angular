@@ -3,7 +3,7 @@
 <form
   [formGroup]="registerForm"
   (ngSubmit)="onSubmit()"
-  class="form form-auth form-login"
+  class="form form-auth form-login block mt-3 text-sm text-gray-700 text-center relative w-full rounded-3xl  px-6 py-4 bg-gray-100 shadow-md"
   autocomplete="off"
 >
   <h2>Registro</h2>
@@ -161,14 +161,14 @@
 
   <div class="field">
     <button
-      class="btn btn-primary button"
+      class="btn btn-primary button bg-green-500 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105"
       type="submit"
       [disabled]="registerForm.invalid"
     >Registrarse</button>
   </div>
   <div class="field footer-form">
     <p>¿Ya tienes cuenta?</p>
-    <p>Ingresa <a routerLink="/login">aquí</a></p>
+    <p>Ingresa <a routerLink="/login" class=" text-green-500 transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">aquí.</a></p>
   </div>
 
   
