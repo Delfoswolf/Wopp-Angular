@@ -1,14 +1,13 @@
-<h2>Formulario Nuevo Producto</h2>
 <form
-  class="form form-product"
+  class="form form-product block mt-3 text-sm text-gray-700 text-center relative w-full rounded-3xl  px-6 py-4 bg-gray-100 shadow-md"
   [formGroup]="productForm"
   (ngSubmit)="createProduct()"
   autocomplete="off"
 >
-  <h2>Productos</h2>
+  <h2>Registro de Productos</h2>
   <p>Registra nuevos productos. Diligencia cada uno de los campos según sean requeridos.</p>
   <div class="field">
-    <label for="name">Nombre*</label>
+    <label for="name">Nombre</label>
     <input
       id="name"
       class="input-field"
@@ -51,7 +50,7 @@
     </div>
   </div>
   <div class="field">
-    <label for="quantity">Cantidad*</label>
+    <label for="quantity">Cantidad</label>
     <input
       id="quantity"
       class="input-field"
@@ -73,7 +72,7 @@
   </div>
 
   <div class="field">
-    <label for="image">Imagen del producto*</label>
+    <label for="image">Imagen del producto (URL)</label>
     <input
       id="image"
       class="input-field"
@@ -126,7 +125,7 @@
   </div>
   <div class="field">
     <button
-      class="btn btn-primary button"
+      class="btn btn-primary button bg-green-500 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105"
       type="submit"
       [disabled]="this.productForm.invalid"
     >Crear Producto</button>
@@ -134,3 +133,4 @@
 
   
 </form>
+ 

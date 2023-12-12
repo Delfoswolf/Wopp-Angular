@@ -1,8 +1,8 @@
 <mat-card [ngClass]="{'text-center': !fullWidthMode}">
     <div [ngClass]="{felx: fullWidthMode}">
-        <img class="mb-1 mx-auto h-[200px]"
-        [ngClass]="{'h-200px': !fullWidthMode, 'h-[360px]': fullWidthMode}"
-        src="https://via.placeholder.com/150"
+        <img class="mb-1 mx-auto h-[200px] mt-5"
+        [ngClass]="{'h-150px': !fullWidthMode, 'h-[360px]': fullWidthMode}"
+        [src]="product.urlImage"
         />
         <div class="w-full"
         [ngClass]="{'px-8 flex flex-col justify-between': fullWidthMode}">

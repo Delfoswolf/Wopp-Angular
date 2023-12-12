@@ -1,5 +1,3 @@
-<h2>Lista de productos</h2>
-
 <ng-container *ngIf="products && products.length > 0; then productList; else noProducts">
 </ng-container>
 
@@ -10,12 +8,12 @@
     <thead>
       <tr>
         <th>Preview</th>
-        <th scope="col">Name and Description</th>
-        <th scope="col">Category</th>
-        <th scope="col">Quantity</th>
-        <th scope="col">Unite price</th>
-        <th scope="col">Total price</th>
-        <th scope="col">Actions</th>
+        <th scope="col">Nombre y Descripcion</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Precio unitario</th>
+        <th scope="col">Precio Total</th>
+        <th scope="col">Actiones</th>
       </tr>
     </thead>
     <tbody>
@@ -34,22 +32,22 @@
         <td>
           <button
             class="btn btn-primary"
-            (click)="update( product._id )"
+            (click)="update( product.id )"
           >
-            Edit
+            Editar
           </button>
           <button
             class="btn btn-primary"
-            (click)="remove( product._id )"
+            (click)="remove( product.id )"
           >
-            Delete
+            Eliminar
           </button>
         </td>
       </tr>
     </tbody>
     <tfoot>
       <tr>
-        <th scope="row">Totals</th>
+        <th scope="row">Total</th>
         <td></td>
         <td></td>
         <td>16</td>
