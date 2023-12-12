@@ -7,6 +7,7 @@ import { NewProductComponent } from './pages/products/new-product/new-product.co
 import { UpdateProductComponent } from './pages/products/update-product/update-product.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { LoginComponent } from './pages/login/login.component';
+import { WopComponent } from './pages/wop/wop.component';
 
 
 
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'product/updated', component: UpdateProductComponent},
   { path: 'product', component: ProductsComponent},
   { path: 'cart', component: CartComponent},
+  { path: 'about', component: WopComponent},
   { path: '', redirectTo: '', pathMatch: 'full'}
 ];
 

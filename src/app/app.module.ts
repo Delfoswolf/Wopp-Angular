@@ -36,6 +36,7 @@ import { NewProductComponent } from './pages/products/new-product/new-product.co
 import { UpdateProductComponent } from './pages/products/update-product/update-product.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { LoginComponent } from './pages/login/login.component';
+import { WopComponent } from './pages/wop/wop.component';
 // import { Header2Component } from './components/header2/header2.component';
 
 
@@ -52,8 +53,9 @@ import { LoginComponent } from './pages/login/login.component';
     NewProductComponent,
     UpdateProductComponent,
     ProductsComponent,
-    LoginComponent
-    
+    LoginComponent,
+    WopComponent,
+        
     // Header2Component
   ],
   imports: [
