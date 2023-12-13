@@ -9,5 +9,5 @@ export interface Product {
     userId: string;
     description: string;
     __v: number;
-    id: string;
+    _id: string;
 }

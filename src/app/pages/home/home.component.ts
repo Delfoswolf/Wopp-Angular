@@ -74,11 +74,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   onAddToCart( product: Product ) : void {
     // CartItem = Product [Entities/Model]
     this.cartService.addToCart({
-      id: product.id,
+      id: product._id,
       product: product.urlImage,
       name: product.name,
       price: product.price,
-      quantity: 1
+      quantity: 1,
+      
     });
   }
 

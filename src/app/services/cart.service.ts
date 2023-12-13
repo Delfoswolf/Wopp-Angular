@@ -12,16 +12,17 @@ export class CartService {
 
   constructor(private _snackBar: MatSnackBar) { }
 
-  addToCart(item: CartItem): void {
+  addToCart(newItem: CartItem): void {
     const items = [...this.cart.value.items];
     
-    const itemInCart = items.find((_item) => _item.id === item.id);
+    const itemInCart = items.find(item => item.id == newItem.id);
     
     if (itemInCart) {
       itemInCart.quantity += 1;
     } else {
-      items.push(item);
+      items.push(newItem);  
     }
+    
 
     this.cart.next( { items } );
     this._snackBar.open('1 item agregado al carro.', 'Ok', { duration: 3000});
@@ -30,7 +31,7 @@ export class CartService {
   removeQuantity(item: CartItem): void {
     let itemForRemoval: CartItem | undefined;
     
-    let filteredItems = this.cart.value.items.map((_item) =>{
+    let filteredItems : Array<CartItem> = this.cart.value.items.map((_item: CartItem) =>{
       if(_item.id === item.id)
       _item.quantity--;
       
