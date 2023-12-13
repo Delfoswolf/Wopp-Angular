@@ -1,31 +1,31 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-products-header',
-  templateUrl: 'products-header.component.html'
+  templateUrl: './products-header.component.html',
+  styleUrls: ['./products-header.component.css']
 })
-export class ProductsHeaderComponent implements OnInit {
-  @Output() columnsCountChange = new EventEmitter<number>();
-  sort= 'descripcion';
-  itemsShowCount = 12;
+export class ProductsHeaderComponent {
+  @Output() columnsToShow = new EventEmitter<number>();
+  @Output() orderChange = new EventEmitter<string>();
+  @Output() itemsShowedChange = new EventEmitter<number>();
 
-  constructor() {}
 
-  ngOnInit(): void {
-      
+  order = 'desc';
+  itemsShowed = 12;
+
+  onSortUpdated ( newOrder: string ) : void {
+    this.order = newOrder;
+    this.orderChange.emit( newOrder );
   }
 
-  onSortUpdated( newSort: string): void {
-    this.sort = newSort;
-
+  onItemsUpdated ( numberItems: number ) : void {
+    this.itemsShowed = numberItems;
+    this.itemsShowedChange.emit( numberItems );
   }
 
-  onItemsUpdated(count: number): void {
-    this.itemsShowCount = count;
-  }
-
-  onColumnsUpdated(colsNum: number): void{
-    this.columnsCountChange.emit(colsNum);
+  onColumnsUpdated ( numberColumns: number ) : void {
+    this.columnsToShow.emit( numberColumns );
   }
 
 }
