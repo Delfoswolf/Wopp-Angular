@@ -1,0 +1,33 @@
+<div class="profile-container">
+  <h2>{{ user.name }}</h2>
+
+  <div *ngIf="!editing">
+    <p><strong>Correo:</strong> {{ user.email }}</p>
+    <p><strong>Dirección:</strong> {{ user.address }}</p>
+    <p><strong>Teléfono:</strong> {{ user.phone }}</p>
+    <!-- Otros detalles del perfil -->
+
+    <button mat-button (click)="editProfile()">Editar perfil</button>
+  </div>
+
+  <div *ngIf="editing">
+    <form [formGroup]="profileForm">
+      <p><strong>ID:</strong> {{ user.id }}</p>
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" formControlName="name" />
+
+      <label for="email">Email:</label>
+      <input type="text" id="email" formControlName="email" />
+
+      <label for="address">Dirección:</label>
+      <input type="text" id="address" formControlName="address" />
+
+      <label for="phone">Teléfono:</label>
+      <input type="text" id="phone" formControlName="phone" />
+
+      <!-- Otros campos del formulario reactivo -->
+
+      <button mat-button (click)="saveProfile()">Guardar cambios</button>
+    </form>
+  </div>
+</div>

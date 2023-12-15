@@ -8,6 +8,7 @@ import { UpdateProductComponent } from './pages/products/update-product/update-p
 import { ProductsComponent } from './pages/products/products.component';
 import { LoginComponent } from './pages/login/login.component';
 import { WopComponent } from './pages/wop/wop.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 
 
 
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'product', component: ProductsComponent},
   { path: 'cart', component: CartComponent},
   { path: 'about', component: WopComponent},
-  { path: '', redirectTo: '', pathMatch: 'full'}
+  { path: '', redirectTo: '', pathMatch: 'full'},
+  { path: 'profile', component: UserProfileComponent}
 ];
 
 @NgModule({

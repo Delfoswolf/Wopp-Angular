@@ -29,7 +29,7 @@ import { FiltersComponent } from './pages/components/filters/filters.component';
 import { ProductBoxComponent } from './pages/components/product-box/product-box.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { CartService } from './services/cart.service';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './pages/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewProductComponent } from './pages/products/new-product/new-product.component';
@@ -37,6 +37,8 @@ import { UpdateProductComponent } from './pages/products/update-product/update-p
 import { ProductsComponent } from './pages/products/products.component';
 import { LoginComponent } from './pages/login/login.component';
 import { WopComponent } from './pages/wop/wop.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { CommonModule } from '@angular/common';
 // import { Header2Component } from './components/header2/header2.component';
 
 
@@ -55,6 +57,9 @@ import { WopComponent } from './pages/wop/wop.component';
     ProductsComponent,
     LoginComponent,
     WopComponent,
+    UserProfileComponent,
+    
+
         
     // Header2Component
   ],
@@ -79,6 +84,8 @@ import { WopComponent } from './pages/wop/wop.component';
     MatInputModule,
     MatSelectModule,
     MatAutocompleteModule,
+    CommonModule,
+    FormsModule
 
 
   ],
@@ -86,3 +93,4 @@ import { WopComponent } from './pages/wop/wop.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+export class UserModule { }
