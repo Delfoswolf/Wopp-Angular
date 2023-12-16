@@ -4,8 +4,9 @@ import { Observable } from 'rxjs';
 import { Product } from '../interfaces/product';
 import { ResponseProducts } from '../interfaces/response-products';
 import { ResponseCategories } from '../interfaces/response-categories';
+import { environment } from 'src/environments/environment.development';
 
-const STORE_BASE_URL = 'http://localhost:2023/api/products';
+const STORE_BASE_URL = environment.baseUrl;
 
 @Injectable({
   providedIn: 'root'
@@ -13,14 +14,6 @@ const STORE_BASE_URL = 'http://localhost:2023/api/products';
 export class StoreService {
 
   constructor( private httpClient: HttpClient ) {}
-
-  getAllProducts( limit: string = '12', sort: string = 'desc', category?: string ) : Observable<Array<Product>> {
-
-    // Establecemos una peticion HTTP de tipo GET para obtener todos los productos como un Observable
-    return this.httpClient.get<Array<Product>>(
-      `${ STORE_BASE_URL }/products${ category ? '/category/' + category : '' }?sort=${ sort }&limit=${ limit }`
-    );
-  }
 
   getAllProductByCategory( category: string | undefined ) {
     return this.httpClient.get<ResponseProducts>( 
