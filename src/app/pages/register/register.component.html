@@ -1,175 +1,179 @@
 <!-- Paso 3 (Reactive Forms): Vincular los campos agrupados al formulario usando la directiva -> [formGroup]="registerForm" -->
 <!-- Paso 4 (Reactive Forms): Obtener datos del formulario invocando el metodo onSumbit a traves del evento -> (ngSubmit)="onSubmit()" -->
-<form
-  [formGroup]="registerForm"
-  (ngSubmit)="onSubmit()"
-  class="form form-auth form-login block mt-3 text-sm text-gray-700 text-center relative w-full rounded-3xl  px-6 py-4 bg-gray-100 shadow-md"
-  autocomplete="off"
->
-  <h2>Registro</h2>
-  <div class="field">
-    <label for="name">Nombre</label>
-    <input
-      id="name"
-      class="input-field"
-      type="text"
-      formControlName="name"
-      placeholder="Ingrese su Nombre"
-      minlength="3"
-    />
-    <!-- Despliega los mensajes de error del campo -->
-    <div
-      *ngIf="registerForm.get( 'name' )?.invalid && registerForm.get( 'name' )?.dirty && registerForm.get( 'name' )?.touched"
-      class="error-message"
-    >
-      <small
-        *ngIf="registerForm.get( 'name' )?.errors?.[ 'required' ]"
+<body>
+    <form
+    [formGroup]="registerForm"
+    (ngSubmit)="onSubmit()"
+    class="form form-auth form-login block mt-3 text-sm text-gray-700 text-center relative w-full rounded-3xl  px-6 py-4 bg-gray-100 shadow-md"
+    autocomplete="off"
+  >
+    <h2>Registro</h2>
+    <div class="field">
+      <label for="name">Nombre</label>
+      <input
+        id="name"
+        class="input-field"
+        type="text"
+        formControlName="name"
+        placeholder="Ingrese su Nombre"
+        minlength="3"
+      />
+      <!-- Despliega los mensajes de error del campo -->
+      <div
+        *ngIf="registerForm.get( 'name' )?.invalid && registerForm.get( 'name' )?.dirty && registerForm.get( 'name' )?.touched"
+        class="error-message"
       >
-        El nombre del usuario es requerido
-      </small>
-      <small
-        *ngIf="registerForm.get( 'name' )?.errors?.[ 'minLength' ]"
-      >
-        Debe tener al menos 3 caracteres
-      </small>
+        <small
+          *ngIf="registerForm.get( 'name' )?.errors?.[ 'required' ]"
+        >
+          El nombre del usuario es requerido
+        </small>
+        <small
+          *ngIf="registerForm.get( 'name' )?.errors?.[ 'minLength' ]"
+        >
+          Debe tener al menos 3 caracteres
+        </small>
+
+      </div>
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        class="input-field"
+        type="email"
+        formControlName="username"
+        placeholder="Ingrese su Email"
+      />
+        <!-- Despliega los mensajes de error del campo -->
+        <div
+          *ngIf="registerForm.get( 'username' )?.invalid && registerForm.get( 'username' )?.dirty && registerForm.get( 'username' )?.touched"
+          class="error-message"
+        >
+          <small
+            *ngIf="registerForm.get( 'username' )?.errors?.[ 'required' ]"
+          >
+            El usuario es requerido
+          </small>
+          <small *ngIf="registerForm.get( 'username' )?.errors?.[ 'email' ]">
+            El usuario debe ser un correo electronico
+          </small>
+        </div>
 
     </div>
-  </div>
-  <div class="field">
-    <label for="email">Email</label>
-    <input
-      id="email"
-      class="input-field"
-      type="email"
-      formControlName="username"
-      placeholder="Ingrese su Email"
-    />
-      <!-- Despliega los mensajes de error del campo -->
-      <div
-        *ngIf="registerForm.get( 'username' )?.invalid && registerForm.get( 'username' )?.dirty && registerForm.get( 'username' )?.touched"
-        class="error-message"
-      >
-        <small
-          *ngIf="registerForm.get( 'username' )?.errors?.[ 'required' ]"
+    <div class="field">
+      <label for="password">Contraseña</label>
+      <input
+        id="password"
+        class="input-field"
+        type="password"
+        formControlName="password"
+        placeholder="Ingrese su Password"
+        minlength="6"
+        maxlength="12"
+      />
+        <!-- Despliega los mensajes de error del campo -->
+        <div
+          *ngIf="registerForm.get( 'password' )?.invalid && registerForm.get( 'password' )?.dirty && registerForm.get( 'password' )?.touched"
+          class="error-message"
         >
-          El usuario es requerido
+          <small
+            *ngIf="registerForm.get( 'password' )?.errors?.[ 'required' ]"
+          >
+            Contraseña requerida
+          </small>
+          <small
+          *ngIf="registerForm.get( 'password' )?.errors?.[ 'pattern' ]"
+        >
+          La contraseña debe tener al menos 8 caracteres y contener al menos 1 número, 1 mayúscula 1 carácter especial.
         </small>
-        <small *ngIf="registerForm.get( 'username' )?.errors?.[ 'email' ]">
-          El usuario debe ser un correo electronico
-        </small>
-      </div>
 
-  </div>
-  <div class="field">
-    <label for="password">Contraseña</label>
-    <input
-      id="password"
-      class="input-field"
-      type="password"
-      formControlName="password"
-      placeholder="Ingrese su Password"
-      minlength="6"
-      maxlength="12"
-    />
-      <!-- Despliega los mensajes de error del campo -->
-      <div
-        *ngIf="registerForm.get( 'password' )?.invalid && registerForm.get( 'password' )?.dirty && registerForm.get( 'password' )?.touched"
-        class="error-message"
-      >
-        <small
-          *ngIf="registerForm.get( 'password' )?.errors?.[ 'required' ]"
-        >
-          Contraseña requerida
-        </small>
-        <small
-        *ngIf="registerForm.get( 'password' )?.errors?.[ 'pattern' ]"
-      >
-        La contraseña debe tener al menos 8 caracteres y contener al menos 1 número, 1 mayúscula 1 carácter especial.
-      </small>
+      </div>
 
     </div>
 
-  </div>
-
-  <div class="field">
-    <label for="address">Direccion</label>
-    <input
-      id="address"
-      class="input-field"
-      type="text"
-      formControlName="address"
-      placeholder="Ingrese su Direccion"
-    />
-      <!-- Despliega los mensajes de error del campo -->
-      <div
-        *ngIf="registerForm.get( 'address' )?.invalid && registerForm.get( 'address' )?.dirty && registerForm.get( 'address' )?.touched"
-        class="error-message"
-      >
-        <small
-          *ngIf="registerForm.get( 'address' )?.errors?.[ 'required' ]"
+    <div class="field">
+      <label for="address">Direccion</label>
+      <input
+        id="address"
+        class="input-field"
+        type="text"
+        formControlName="address"
+        placeholder="Ingrese su Direccion"
+      />
+        <!-- Despliega los mensajes de error del campo -->
+        <div
+          *ngIf="registerForm.get( 'address' )?.invalid && registerForm.get( 'address' )?.dirty && registerForm.get( 'address' )?.touched"
+          class="error-message"
         >
-          La Direccion es requerida
-        </small>
-        
-      </div>
+          <small
+            *ngIf="registerForm.get( 'address' )?.errors?.[ 'required' ]"
+          >
+            La Direccion es requerida
+          </small>
+          
+        </div>
 
-  </div>
-
-  <div class="field">
-    <label for="phone">Telefono</label>
-    <input
-      id="phone"
-      class="input-field"
-      type="tel"
-      formControlName="phone"
-      placeholder="Ingrese su Direccion"
-    />
-      <!-- Despliega los mensajes de error del campo -->
-      <div
-        *ngIf="registerForm.get( 'phone' )?.invalid && registerForm.get( 'phone' )?.dirty && registerForm.get( 'phone' )?.touched"
-        class="error-message"
-      >
-        <small
-          *ngIf="registerForm.get( 'phone' )?.errors?.[ 'required' ]"
-        >
-          La numero de celular es requerido.
-        </small>
-        
-      </div>
-
-  </div>
-  <div class="field">
-    <label for="role">Tipo</label>
-    <select
-      id="role"
-      class="input-field"
-      formControlName="role"
-    >
-      <option value="" selected>Seleccione...</option>
-      <option
-        *ngFor="let role of roles"
-        [value]="role.value"
-      >{{ role.name }}</option>
-    </select>
-  </div>
-  <!-- Imprime mensaje -->
-  <div class="field">
-    <div [class]="classMessage">
-      {{ message }}
     </div>
-  </div>
 
-  <div class="field">
-    <button
-      class="btn btn-primary button bg-green-500 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105"
-      type="submit"
-      [disabled]="registerForm.invalid"
-    >Registrarse</button>
-  </div>
-  <div class="field footer-form">
-    <p>¿Ya tienes cuenta?</p>
-    <p>Ingresa <a routerLink="/login" class=" text-green-500 transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">aquí.</a></p>
-  </div>
+    <div class="field">
+      <label for="phone">Telefono</label>
+      <input
+        id="phone"
+        class="input-field"
+        type="tel"
+        formControlName="phone"
+        placeholder="Ingrese su Direccion"
+      />
+        <!-- Despliega los mensajes de error del campo -->
+        <div
+          *ngIf="registerForm.get( 'phone' )?.invalid && registerForm.get( 'phone' )?.dirty && registerForm.get( 'phone' )?.touched"
+          class="error-message"
+        >
+          <small
+            *ngIf="registerForm.get( 'phone' )?.errors?.[ 'required' ]"
+          >
+            La numero de celular es requerido.
+          </small>
+          
+        </div>
 
-  
-</form>
+    </div>
+    <div class="field">
+      <label for="role">Tipo</label>
+      <select
+        id="role"
+        class="input-field"
+        formControlName="role"
+      >
+        <option value="" selected>Seleccione...</option>
+        <option
+          *ngFor="let role of roles"
+          [value]="role.value"
+        >{{ role.name }}</option>
+      </select>
+    </div>
+    <!-- Imprime mensaje -->
+    <div class="field">
+      <div [class]="classMessage">
+        {{ message }}
+      </div>
+    </div>
+
+    <div class="field">
+      <button
+        class="btn btn-primary button bg-green-500 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105"
+        type="submit"
+        [disabled]="registerForm.invalid"
+      >Registrarse</button>
+    </div>
+    <div class="field footer-form">
+      <p>¿Ya tienes cuenta?</p>
+      <p>Ingresa <a routerLink="/login" class=" text-green-500 transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">aquí.</a></p>
+    </div>
+
+    
+  </form>
+
+</body>
+
