@@ -1,3 +1,12 @@
 .form-auth, .form-product {
     margin-top: 6rem;
 }
+
+body {
+    display: flex;
+    align-items: center;
+    min-height: 96vh;
+    background-size: cover;
+    background-position: center;
+    background-image: url(./../../../../assets/images/Productoo.jpg);
+}

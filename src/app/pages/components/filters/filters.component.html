@@ -1,17 +1,24 @@
-<mat-expansion-panel *ngIf="categories">
-    <mat-expansion-panel-header>
-        <mat-panel-title> Productos </mat-panel-title>
-    </mat-expansion-panel-header>
-    <mat-selection-list
-        [multiple]="false"
-        #category
-        hideSingleSelectionIndicator
-    >
-        <mat-list-option 
-            *ngFor="let category of categories" [value]="category"
-            (click)="onShowCategory( category.name )"
+<body>
+    
+    <mat-expansion-panel *ngIf="categories">
+        
+        <mat-expansion-panel-header>
+            <mat-panel-title> Productos </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-selection-list
+            [multiple]="false"
+            #category
+            hideSingleSelectionIndicator
+            
         >
-            <span>{{category.name}}</span>
-        </mat-list-option>
-    </mat-selection-list>
-</mat-expansion-panel>
+        
+            <mat-list-option 
+                *ngFor="let category of categories" [value]="category"
+                (click)="onShowCategory( category.name )"
+            >
+                <span>{{category.name}}</span>
+            </mat-list-option>
+        </mat-selection-list>
+    </mat-expansion-panel>
+</body>
+

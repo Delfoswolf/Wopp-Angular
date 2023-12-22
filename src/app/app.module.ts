@@ -39,6 +39,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { WopComponent } from './pages/wop/wop.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { CommonModule } from '@angular/common';
+import { WhatsappWidgetComponent } from './whatsapp-widget/whatsapp-widget.component';
 // import { Header2Component } from './components/header2/header2.component';
 
 
@@ -58,6 +59,7 @@ import { CommonModule } from '@angular/common';
     LoginComponent,
     WopComponent,
     UserProfileComponent,
+    WhatsappWidgetComponent,
     
 
         

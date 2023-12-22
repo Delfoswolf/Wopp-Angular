@@ -1,0 +1,21 @@
+/* whatsapp-widget.component.css */
+
+.whatsapp-widget {
+    position: fixed;
+    bottom: 4rem; /* Ajusta según tu diseño */
+    right: 2rem; /* Ajusta según tu diseño */
+    z-index: 999;
+  }
+  
+  .whatsapp-widget img {
+    width: 60px; /* Ajusta según tu diseño */
+    height: 60px; /* Ajusta según tu diseño */
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+    position: sticky
+  }
+  
+  .whatsapp-widget:hover img {
+    transform: scale(1.1);
+  }
+  
