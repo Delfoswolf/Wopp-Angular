@@ -1,26 +1,26 @@
 
 
-<mat-toolbar class="max-w-8xl mx-auto border-x justify-between mat-elevation-z6">
+<mat-toolbar class="max-w-8xl mx-auto border-x justify-between mat-elevation-z6 text-6xl">
         <button mat-icon-button routerLink="">
             <mat-icon>space</mat-icon>
         </button>
-        <span>Wopp</span>
+        <span class="text-4xl">Wopp</span>
         <span class="example-spacer"></span>
-        <button mat-button routerLink="/about">Qué somos</button>
+        <button mat-button routerLink="/about" class="text-2xl">Qué somos</button>
         
         <section>
             
         </section>
-        <button mat-button routerLink="/product/new">
-            <mat-icon>add_box</mat-icon>
+        <button mat-icon-button routerLink="/product/new" class="scale-150">
+            <mat-icon >add_box</mat-icon>
             <!-- Registro de Productos -->
           </button>
-        <button routerLink="/register" mat-button>
-            <mat-icon>person_add</mat-icon>
+        <button routerLink="/register" mat-icon-button class="scale-150">
+            <mat-icon >person_add</mat-icon>
             <!-- Registro -->
           </button>
-        <button routerLink="/login" mat-button>
-            <mat-icon>account_circle</mat-icon>
+        <button routerLink="/login" mat-icon-button class="scale-150">
+            <mat-icon >account_circle</mat-icon>
             <!-- Ingresa -->
           </button>
         <!-- <button [matMenuTriggerFor]="usuario" mat-button>Perfil</button>
@@ -43,7 +43,7 @@
     
     
     <mat-menu #menu="matMenu">
-        <div class="p-3 divide-y divide-solid">
+        <div class="p-3 divide-y divide-solid scale-150">
             <div class="pb-3 flex justify-between">
                 <span class="mr-16">{{itemsQuantity}} Items</span>
                 <a routerLink="cart">Ver Carrito</a>
